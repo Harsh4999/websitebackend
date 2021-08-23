@@ -36,6 +36,7 @@ public class Studentcontroller {
 	}
 	@PostMapping("/add")
 	public ResponseEntity<Student> add(@RequestBody Student student){
+
 		return new ResponseEntity<>(studentservice.addStud(student),HttpStatus.CREATED);
 	}
 	@PutMapping("/update")

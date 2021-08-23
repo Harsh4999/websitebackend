@@ -1,15 +1,20 @@
 package com.harsh.websiteportalbackend.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="student")
-public class Student {
+public class Student implements Serializable{
 	@Id
-	@Column(name="rollNo")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="rollno",nullable=false,updatable=false)
 	private	long rollno;
 	@Column(name="name")
 	private String name;
