@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Student {
 	@Id
 	@Column(name="rollNo")
-	private	long rollNo;
+	private	long rollno;
 	@Column(name="name")
 	private String name;
 	@Column(name="username")
@@ -29,7 +29,7 @@ public class Student {
 	public Student(long rollNo, String name, String username, String password, int maths, int science, int english,
 			int total) {
 		super();
-		this.rollNo = rollNo;
+		this.rollno = rollNo;
 		this.name = name;
 		this.username = username;
 		this.password = password;
@@ -39,10 +39,10 @@ public class Student {
 		this.total = total;
 	}
 	public long getRollNo() {
-		return rollNo;
+		return rollno;
 	}
 	public void setRollNo(long rollNo) {
-		this.rollNo = rollNo;
+		this.rollno = rollNo;
 	}
 	public String getName() {
 		return name;

@@ -28,6 +28,7 @@ public class Studentservice {
 	public Student addStud(Student student) {
 		passwordEncryptor = new StrongPasswordEncryptor(); 
 		String encryptpass = passwordEncryptor.encryptPassword(student.getPassword());
+		student=getMarks(student);
 		student.setPassword(encryptpass);
 		int total=student.getEnglish()+student.getMaths()+student.getScience();
 		student.setTotal(total);
@@ -41,5 +42,16 @@ public class Studentservice {
 	}
 	public void deleteStud(long rollno) {
 		studentrepo.deleteById(rollno);
+	}
+	public Student getMarks(Student student) {
+		int upper=100;
+		int lower=0;
+		int r= (int) (Math.random() * (upper - lower)) + lower;
+		student.setMaths(r);
+		r=(int) (Math.random() * (upper - lower)) + lower;
+		student.setEnglish(r);
+		r=(int) (Math.random() * (upper - lower)) + lower;
+		student.setScience(r);
+		return student;
 	}
 }
